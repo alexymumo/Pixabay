@@ -11,5 +11,5 @@ import com.example.pixabay.data.local.entity.Pixabay
     version = 1
 )
 abstract class PixabayDb: RoomDatabase() {
-    abstract fun pixabay(): PixabayDao
+    abstract fun pixabayDao(): PixabayDao
 }
