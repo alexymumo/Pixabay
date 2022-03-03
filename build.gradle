@@ -7,15 +7,13 @@ buildscript {
         constraint_layout_version = "2.1.2"
         gradle_version = "7.0.4"
         gradle_kotlin_version = "1.6.0"
-
         coil_version = "1.4.0"
-        navigation_components_version = "2.3.5"
+        navigation_components_version = "2.4.1"
         retrofit_version = "2.9.0"
         coroutines_version = "1.5.2"
-        room_version = "2.3.0"
-        logging_interceptor_version = "4.9.0"
-        dagger_hilt = "2.38.1"
-        lifecycle_version = "2.4.0"
+        room_version = "2.4.2"
+        logging_interceptor_version = "5.0.0-alpha.2"
+        lifecycle_version = "2.4.1"
         lottie_version = "3.4.0"
     }
     repositories {
@@ -25,8 +23,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$dagger_hilt"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_components_version"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

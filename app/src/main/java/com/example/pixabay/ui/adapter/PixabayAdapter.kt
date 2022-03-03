@@ -23,7 +23,7 @@ class PixabayAdapter: RecyclerView.Adapter<PixabayAdapter.PixabayViewHolder>() {
             oldItem == newItem
     }
 
-    val differ = AsyncListDiffer(this, differCallBack)
+    private val differ = AsyncListDiffer(this, differCallBack)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PixabayViewHolder {
         val imageItemBinding = ImageItemBinding.inflate(

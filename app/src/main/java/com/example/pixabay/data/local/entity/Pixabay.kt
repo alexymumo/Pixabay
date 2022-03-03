@@ -1,10 +1,12 @@
 package com.example.pixabay.data.local.entity
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
 @Entity(tableName = "pixabay_table")
 data class Pixabay(
+    @PrimaryKey
     val id : Int,
     val type : String,
     val tags : String,

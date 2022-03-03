@@ -42,3 +42,11 @@ object NetworkModule {
             .build()
     }
 }
+
+/*
+* Hilt Dependency Injection -
+* Hilt Application class - all apps in hilt should contain the application class
+* Annotated with @HiltAndroidApp
+*
+*
+* */
