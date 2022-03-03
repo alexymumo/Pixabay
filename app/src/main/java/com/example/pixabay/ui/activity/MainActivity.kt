@@ -1,7 +1,8 @@
-package com.example.pixabay
+package com.example.pixabay.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pixabay.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
