@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.pixabay.R
+import com.example.pixabay.databinding.FragmentImageBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ImageFragment : Fragment() {
+    private lateinit var binding: FragmentImageBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

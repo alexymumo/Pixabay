@@ -1,7 +1,7 @@
 package com.example.pixabay.di
 
 import com.example.pixabay.data.remote.PixabayApi
-import com.example.pixabay.utils.Constants.BASE_URL
+import com.example.pixabay.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.example.pixabay.data.local.entity.Pixabay
 import com.example.pixabay.databinding.ImageItemBinding
 
@@ -35,11 +37,11 @@ class PixabayAdapter: RecyclerView.Adapter<PixabayAdapter.PixabayViewHolder>() {
         val imageUrl = pixabay.webformatURL
         val user = pixabay.user
         holder.binding.apply {
-            
+            imageView.load(imageUrl){
+                transformations(RoundedCornersTransformation(10f))
+                crossfade(true)
+            }
         }
-
     }
     override fun getItemCount() = differ.currentList.size
-
-
 }
