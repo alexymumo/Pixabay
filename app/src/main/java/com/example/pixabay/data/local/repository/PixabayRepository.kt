@@ -1,5 +1,6 @@
 package com.example.pixabay.data.local.repository
 
+import com.example.pixabay.BuildConfig.API_KEY
 import com.example.pixabay.data.local.dao.PixabayDao
 import com.example.pixabay.data.local.entity.Pixabay
 import com.example.pixabay.data.remote.PixabayApi
@@ -11,6 +12,7 @@ class PixabayRepository @Inject constructor(
     private val pixabayDao: PixabayDao,
     private val pixabayApi: PixabayApi
     ): SafeApiRequest() {
+
     fun fetchDb(): Flow<List<Pixabay>> {
         return pixabayDao.fetchAllImages()
     }
@@ -21,7 +23,8 @@ class PixabayRepository @Inject constructor(
     suspend fun deleteImage() {
         pixabayDao.deleteAll()
     }
-    suspend fun fetchImages()  = safeApiCall {
-        pixabayApi.fetchImages()
+
+    suspend fun fetchImages(searchQuery: String)  = safeApiCall {
+        pixabayApi.fetchImages(API_KEY, searchQuery)
     }
 }

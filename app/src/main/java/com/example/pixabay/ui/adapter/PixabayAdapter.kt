@@ -23,7 +23,7 @@ class PixabayAdapter: RecyclerView.Adapter<PixabayAdapter.PixabayViewHolder>() {
             oldItem == newItem
     }
 
-    private val differ = AsyncListDiffer(this, differCallBack)
+    val differ = AsyncListDiffer(this, differCallBack)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PixabayViewHolder {
         val imageItemBinding = ImageItemBinding.inflate(
@@ -35,7 +35,7 @@ class PixabayAdapter: RecyclerView.Adapter<PixabayAdapter.PixabayViewHolder>() {
     override fun onBindViewHolder(holder: PixabayViewHolder, position: Int) {
         val pixabay = differ.currentList[position]
         val imageUrl = pixabay.webformatURL
-        val user = pixabay.user
+      //  val user = pixabay.user
         holder.binding.apply {
             imageView.load(imageUrl){
                 transformations(RoundedCornersTransformation(10f))
