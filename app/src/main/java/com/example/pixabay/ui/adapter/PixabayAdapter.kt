@@ -2,28 +2,22 @@ package com.example.pixabay.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import coil.transform.RoundedCornersTransformation
 import com.example.pixabay.data.local.entity.Pixabay
 import com.example.pixabay.databinding.ImageItemBinding
+import com.example.pixabay.utils.PixabayComparator
 
-class PixabayAdapter: RecyclerView.Adapter<PixabayAdapter.PixabayViewHolder>() {
 
-    inner class PixabayViewHolder(val binding: ImageItemBinding):
-        RecyclerView.ViewHolder(binding.root)
+class PixabayAdapter: ListAdapter<Pixabay,PixabayAdapter.PixabayViewHolder>(PixabayComparator()) {
 
-    private val differCallBack = object : DiffUtil.ItemCallback<Pixabay>() {
-        override fun areItemsTheSame(oldItem: Pixabay, newItem: Pixabay) =
-            oldItem.id == newItem.id
+    inner class PixabayViewHolder(val binding: ImageItemBinding): RecyclerView.ViewHolder(binding.root)
 
-        override fun areContentsTheSame(oldItem: Pixabay, newItem: Pixabay) =
-            oldItem == newItem
+    fun bind(pixabay: Pixabay) {
     }
 
-    val differ = AsyncListDiffer(this, differCallBack)
+
+    //val differ = AsyncListDiffer(this, differCallBack)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PixabayViewHolder {
         val imageItemBinding = ImageItemBinding.inflate(
@@ -33,15 +27,10 @@ class PixabayAdapter: RecyclerView.Adapter<PixabayAdapter.PixabayViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: PixabayViewHolder, position: Int) {
-        val pixabay = differ.currentList[position]
-        val imageUrl = pixabay.webformatURL
-      //  val user = pixabay.user
-        holder.binding.apply {
-            imageView.load(imageUrl){
-                transformations(RoundedCornersTransformation(10f))
-                crossfade(true)
-            }
+        val pixabay = currentList[position]
+        holder.itemView.setOnClickListener {
         }
+
     }
-    override fun getItemCount() = differ.currentList.size
+    override fun getItemCount() = currentList.size
 }

@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_detailFragment_to_imageFragment"
             app:destination="@id/imageFragment" />
+        <argument
+            android:name="image"
+            app:argType="com.example.pixabay.data.local.entity.Pixabay" />
     </fragment>
 
     <fragment

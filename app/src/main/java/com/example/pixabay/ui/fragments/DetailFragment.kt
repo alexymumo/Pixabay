@@ -5,17 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
+import coil.load
 import com.example.pixabay.R
 import com.example.pixabay.databinding.FragmentDetailBinding
-import com.example.pixabay.ui.adapter.PixabayAdapter
-import com.example.pixabay.ui.viewmodels.PixabayViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailFragment : Fragment(R.layout.fragment_detail) {
-    private lateinit var pixabayAdapter: PixabayAdapter
-    private val viewModel: PixabayViewModel by viewModels()
+    private val args: DetailFragmentArgs by navArgs()
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
 
@@ -32,9 +30,21 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         setUpUI()
     }
 
-    private fun setUpUI() {}
+    private fun setUpUI() {
+        val image = args.image
+        val imageUrl = image.webformatURL
+        val user = image.user
+        val views = image.views.toString()
+        val download = image.downloads.toString()
+        val comments = image.comments.toString()
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+
+        binding.apply {
+            imageView.load(imageUrl) {
+                crossfade(true)
+                downloads.text = download
+
+            }
+        }
     }
 }

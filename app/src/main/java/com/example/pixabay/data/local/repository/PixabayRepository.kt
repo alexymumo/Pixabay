@@ -3,9 +3,11 @@ package com.example.pixabay.data.local.repository
 import com.example.pixabay.BuildConfig.API_KEY
 import com.example.pixabay.data.local.dao.PixabayDao
 import com.example.pixabay.data.local.entity.Pixabay
+import com.example.pixabay.data.local.entity.PixabayResponse
 import com.example.pixabay.data.remote.PixabayApi
 import com.example.pixabay.utils.SafeApiRequest
 import kotlinx.coroutines.flow.Flow
+import retrofit2.Response
 import javax.inject.Inject
 
 class PixabayRepository @Inject constructor(
@@ -22,6 +24,9 @@ class PixabayRepository @Inject constructor(
 
     suspend fun deleteImage() {
         pixabayDao.deleteAll()
+    }
+    suspend fun searchImages(searchQuery: String): Response<PixabayResponse> {
+        return pixabayApi.searchImages(API_KEY, searchQuery)
     }
 
     suspend fun fetchImages(searchQuery: String)  = safeApiCall {
