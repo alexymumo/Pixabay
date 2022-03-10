@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import coil.load
 import com.example.pixabay.R
 import com.example.pixabay.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,6 +30,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     }
 
     private fun setUpUI() {
+        /*
         val image = args.image
         val imageUrl = image.webformatURL
         val user = image.user
@@ -45,6 +45,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 downloads.text = download
 
             }
-        }
+        }*/
     }
 }

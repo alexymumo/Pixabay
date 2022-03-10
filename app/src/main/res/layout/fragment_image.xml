@@ -8,16 +8,25 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="30dp"
+        android:id="@+id/searchLayout"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginEnd="10dp"
+        app:hintEnabled="false"
         android:layout_marginStart="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search"
             android:inputType="text"
-            android:textSize="16sp"
+            android:background="@drawable/round_edittext"
+            android:textSize="20sp"
+            android:textAlignment="textStart"
+            android:textStyle="normal"
+            android:textColor="@color/black"
             android:hint="@string/search_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -25,17 +34,30 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/imageRecycler"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:clipToPadding="false"
+        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:padding="4dp"
-        android:clipToPadding="false"
-        tools:listitem="@layout/image_item"/>
+        tools:listitem="@layout/image_item" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:foregroundGravity="center"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

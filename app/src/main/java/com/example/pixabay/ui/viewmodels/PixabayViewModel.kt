@@ -2,6 +2,7 @@ package com.example.pixabay.ui.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.pixabay.data.local.entity.PixabayResponse
 import com.example.pixabay.data.local.repository.PixabayRepository
@@ -15,7 +16,7 @@ import javax.inject.Inject
 class PixabayViewModel @Inject constructor(
     private val pixabayRepository: PixabayRepository
     ): ViewModel() {
-    //var images = pixabayRepository.fetchDb().asLiveData()
+    var images = pixabayRepository.fetchDb().asLiveData()
     private val searchedImages : MutableLiveData<Resource<PixabayResponse>> = MutableLiveData()
     var searched: MutableLiveData<Resource<PixabayResponse>> = searchedImages
 

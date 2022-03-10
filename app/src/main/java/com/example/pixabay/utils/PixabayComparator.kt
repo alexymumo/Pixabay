@@ -5,9 +5,9 @@ import com.example.pixabay.data.local.entity.Pixabay
 
 class PixabayComparator: DiffUtil.ItemCallback<Pixabay>() {
     override fun areItemsTheSame(oldItem: Pixabay, newItem: Pixabay): Boolean {
-        return oldItem.id == newItem.id
+        return oldItem == newItem
     }
     override fun areContentsTheSame(oldItem: Pixabay, newItem: Pixabay): Boolean {
-        return oldItem == newItem
+        return oldItem.id == newItem.id
     }
 }
