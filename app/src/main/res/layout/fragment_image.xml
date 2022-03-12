@@ -34,10 +34,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/imageRecycler"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:orientation="vertical"
         android:padding="4dp"
         android:clipToPadding="false"
@@ -60,4 +59,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
