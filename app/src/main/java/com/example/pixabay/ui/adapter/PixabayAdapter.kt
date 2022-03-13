@@ -11,7 +11,7 @@ import com.example.pixabay.databinding.ImageItemBinding
 import com.example.pixabay.utils.PixabayComparator
 
 
-class PixabayAdapter: ListAdapter<Pixabay,PixabayAdapter.PixabayViewHolder>(PixabayComparator()) {
+class PixabayAdapter(private val onClickListener: OnClickListener): ListAdapter<Pixabay,PixabayAdapter.PixabayViewHolder>(PixabayComparator()) {
 
     inner class PixabayViewHolder(private val binding: ImageItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(pixabay: Pixabay) {
@@ -35,6 +35,9 @@ class PixabayAdapter: ListAdapter<Pixabay,PixabayAdapter.PixabayViewHolder>(Pixa
         holder.itemView.setOnClickListener {
         }
         holder.bind(pixabay)
+    }
+    class OnClickListener(val clickListener: (pix: Pixabay) -> Unit) {
+        fun onClick(pix: Pixabay) = clickListener(pix)
     }
     override fun getItemCount() = currentList.size
 }

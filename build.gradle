@@ -15,6 +15,7 @@ buildscript {
         logging_interceptor_version = "5.0.0-alpha.2"
         lifecycle_version = "2.4.1"
         lottie_version = "3.4.0"
+        paging_version = "3.1.1"
     }
     repositories {
         google()

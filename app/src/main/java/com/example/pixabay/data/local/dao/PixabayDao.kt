@@ -18,4 +18,7 @@ interface PixabayDao {
 
     @Query("DELETE FROM pixabay_table")
     suspend fun deleteAll()
+
+    @Query("SELECT * FROM pixabay_table WHERE tags OR previewURL OR pageURL LIKE '%' || :query || '%'")
+    suspend fun fetchImages(query: String?): List<Pixabay>
 }
