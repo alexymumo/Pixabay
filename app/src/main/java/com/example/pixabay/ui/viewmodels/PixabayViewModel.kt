@@ -15,7 +15,7 @@ class PixabayViewModel @Inject constructor(
     private val pixabayRepository: PixabayRepository
     ): ViewModel() {
 
-    private val _searchQuery = MutableLiveData("fruit")
+    private val _searchQuery = MutableLiveData("shoe")
     val searchQuery : LiveData<String> = _searchQuery
 
     suspend fun getImages(query: String): Flow<Resource<List<Pixabay>>> {

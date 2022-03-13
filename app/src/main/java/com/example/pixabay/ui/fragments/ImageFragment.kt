@@ -71,7 +71,6 @@ class ImageFragment : Fragment(R.layout.fragment_image) {
 
                     }
                 }
-
             }
         }
     }
