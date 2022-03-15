@@ -40,5 +40,5 @@ Minimum API level supported is: 23
 <br>
 
 ## Screenshots
-<img src="">
-<img src="">
+<img src="assets/fruits.png">
+<img src="assets/shoes.png">
