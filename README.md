@@ -22,7 +22,7 @@ Minimum API level supported is: 23
 
 ## Architecture
 - These application is build using MVVM architecture to allow separation of concerns.
-<img src="assets/architecture.png">
+<img src="assets/architecture.png" width="300%">
 <br>
 
 ## TechStack
@@ -40,5 +40,5 @@ Minimum API level supported is: 23
 <br>
 
 ## Screenshots
-<img src="assets/fruits.png">
-<img src="assets/shoes.png">
+<img src="assets/fruits.png" width="300%">
+<img src="assets/shoes.png" width="300%">
