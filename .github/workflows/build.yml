@@ -1,4 +1,4 @@
-name: Firebase App Distribution
+name: Firebase Distribution
 
 on:
   pull_request:
