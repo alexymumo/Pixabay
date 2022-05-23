@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "507237780432",
+    "project_id": "pixabay-e3034",
+    "storage_bucket": "pixabay-e3034.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507237780432:android:434097d84b8e99dbfe07d5",
+        "android_client_info": {
+          "package_name": "com.example.pixabay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507237780432-gvn4o0hvte15bd5iqsmu0ogmh21ua5kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJN_9mEE9tV5w6jDwUk87tmX63VuzDW-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507237780432-gvn4o0hvte15bd5iqsmu0ogmh21ua5kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
